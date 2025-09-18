@@ -53,3 +53,22 @@ A starting value between 1 and 1000 (inclusive)
 Number of start values that result in overflow = 0
 elapsed time = 0.01 seconds
 ```
+
+Instructions to Run with Docker
+* Install Docker
+* Lauch Docker
+* Ensure Docker is running. Test with:
+```bash
+docker --version
+```
+* Create Image
+```bash
+docker build -t collatz-app .
+```
+* Run Container
+```bash
+docker run --rm collatz-app M N
+```
+Replace M and N with integer range
+
+
