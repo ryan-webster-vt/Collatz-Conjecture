@@ -36,7 +36,7 @@ xcode-select --install
 
 * Clone the Repository
 ```bash
-git clone https://github.com/username/collatz.git
+git clone https://github.com/ryan-webster-vt/Collatz-Conjecture.git
 cd collatz
 ```
 
