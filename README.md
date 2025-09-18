@@ -18,36 +18,39 @@ Starting with `n = 6`:
 - **Purpose**: This program finds the starting number within a specified range that has the longest total stopping time.
 - **Note**: For very large numbers, intermediate values might exceed standard integer limits, potentially causing overflow warnings.
 
-Instructions to Run without Docker
-* Install a C compiler
-Windows
-* Install MinGW-w64 or TDM-GCC
-* Make sure `gcc` is in your system PATH. Test with:
+## Running Without Docker
+
+### Prerequisites
+You need a C compiler installed.
+
+#### Windows
+1. Install [MinGW-w64](https://www.mingw-w64.org/) or [TDM-GCC](http://tdm-gcc.tdsource.de/).
+2. Ensure `gcc` is in your system PATH.
+3. Test:
 ```bash
 gcc -version
 ```
-Linux
+#### Linux
 ```bash
 sudo apt update
 sudo apt install build-essential
 ```
-Mac
+#### macOS
 ```bash
 xcode-select --install
 ```
-
-* Clone the Repository
+### Steps
+1. Clone the Repository
 ```bash
 git clone https://github.com/ryan-webster-vt/Collatz-Conjecture.git
 cd collatz
 ```
 
-* Run the Program
-Replace M and N with your desired range of starting numbers.
+2. Compile and run, replacing M and N with your desired range
 ```bash
-./collatz.exe 1 1000
+./collatz.exe M N
 ```
-* Example Output
+### Example Output
 ```yaml
 A starting value between 1 and 1000 (inclusive)
   having the largest total stopping time is 871
@@ -56,21 +59,26 @@ Number of start values that result in overflow = 0
 elapsed time = 0.01 seconds
 ```
 
-Instructions to Run with Docker
-* Install Docker
-* Lauch Docker
-* Ensure Docker is running. Test with:
+## Running With Docker
+
+### Prerequisites
+1. Install Docker
+2. Ensure Docker is running. Test with:
 ```bash
 docker --version
 ```
-* Create Image
+### Steps
+1. Clone the repository (if not already done)
+2. Build the Docker image:
 ```bash
 docker build -t collatz-app .
 ```
-* Run Container
+3. Run the container, replacing M and N with your range:
 ```bash
 docker run --rm collatz-app M N
 ```
-Replace M and N with integer range
+## Notes
+* Use positive integers for M and N, ensuring M ≤ N.
+* Large ranges may slow down execution or risk overflow with big intermediate values.
 
 
